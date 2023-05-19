@@ -1,5 +1,5 @@
 # LinxTermC
-A C-based Linux terminal emulation project.
+A C-based Linux terminal emulation project. The shell creates child processes to execute commands, supports internal commands like changing directories and listing contents, handles I/O redirection, background execution, and displays the current directory in the prompt. It provides hands-on experience with process management, executing programs, and basic shell functionality.
 
 # What I learned
 - Experience with process creation, management, and communication between **parent and child processes**.
