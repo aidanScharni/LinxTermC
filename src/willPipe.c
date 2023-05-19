@@ -3,7 +3,7 @@
 #include <dirent.h>
 #include <sys/wait.h>
 
-#include "header.h"
+#include "../headers/header.h"
 
 //The willPipe function not only handles the redirects for proper pipping, but also handles the execution
 //of those commands. The pipe redirection is designed as the output of the command to the left of the pipe

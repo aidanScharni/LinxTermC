@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include <sys/wait.h>
 
-#include "header.h"
+#include "../headers/header.h"
 
 
 //The builtIn file is used to check if a command is a builtin function and, if command is builtin, execute accordingly.

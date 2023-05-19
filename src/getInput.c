@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-#include "header.h"
+#include "../headers/header.h"
 
 //The getInput function is used to parse information passed from the user. The commands passed by the user
 //are stored in a char *[] that trails with a NULL value. Background processes are signified by either 1 or 2. If

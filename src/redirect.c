@@ -1,7 +1,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "header.h"
+#include "../headers/header.h"
 
 //The redirect function is used to redirect the STDIN and STDOUT according to user input. This function utilizes
 //the dup2 command to alter file descriptors to the appropriate locations.

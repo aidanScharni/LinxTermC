@@ -1,26 +1,39 @@
-myshell: builtIn.c checkRedirect.c redirect.c getInput.c main.c willPipe.c execCmds.c
-	gcc builtIn.c checkRedirect.c redirect.c getInput.c willPipe.c execCmds.c -o myshell main.c
+SRC_DIR := ../src
 
-checkRedirect: checkRedirect.c
-	gcc -c checkRedirect.c
+myshell: $(SRC_DIR)/builtIn.o $(SRC_DIR)/checkRedirect.o $(SRC_DIR)/redirect.o $(SRC_DIR)/getInput.o $(SRC_DIR)/willPipe.o $(SRC_DIR)/execCmds.o $(SRC_DIR)/main.o
+	gcc $(SRC_DIR)/builtIn.o $(SRC_DIR)/checkRedirect.o $(SRC_DIR)/redirect.o $(SRC_DIR)/getInput.o $(SRC_DIR)/willPipe.o $(SRC_DIR)/execCmds.o $(SRC_DIR)/main.o -o myshell
 
-main: main.c
-	gcc -c main.c
+$(SRC_DIR)/checkRedirect.o: $(SRC_DIR)/checkRedirect.c
+	gcc -c $(SRC_DIR)/checkRedirect.c -o $(SRC_DIR)/checkRedirect.o
 
-builtIn: builtIn.c
-	gcc -c builtIn.c
+$(SRC_DIR)/main.o: $(SRC_DIR)/main.c
+	gcc -c $(SRC_DIR)/main.c -o $(SRC_DIR)/main.o
 
-redirect: redirect.c
-	gcc -c redirect.c
+$(SRC_DIR)/builtIn.o: $(SRC_DIR)/builtIn.c
+	gcc -c $(SRC_DIR)/builtIn.c -o $(SRC_DIR)/builtIn.o
 
-getInput: getInput.c
-	gcc -c getInput.c
+$(SRC_DIR)/redirect.o: $(SRC_DIR)/redirect.c
+	gcc -c $(SRC_DIR)/redirect.c -o $(SRC_DIR)/redirect.o
 
-willPipe: willPipe.c
-	gcc -c willPipe.c
+$(SRC_DIR)/getInput.o: $(SRC_DIR)/getInput.c
+	gcc -c $(SRC_DIR)/getInput.c -o $(SRC_DIR)/getInput.o
 
-execCmds: execCmds.c
-	gcc -c execCmds.c
+$(SRC_DIR)/willPipe.o: $(SRC_DIR)/willPipe.c
+	gcc -c $(SRC_DIR)/willPipe.c -o $(SRC_DIR)/willPipe.o
+
+$(SRC_DIR)/execCmds.o: $(SRC_DIR)/execCmds.c
+	gcc -c $(SRC_DIR)/execCmds.c -o $(SRC_DIR)/execCmds.o
+
+OBJECTS := $(SRC_DIR)/builtIn.o $(SRC_DIR)/checkRedirect.o $(SRC_DIR)/redirect.o $(SRC_DIR)/getInput.o $(SRC_DIR)/willPipe.o $(SRC_DIR)/execCmds.o $(SRC_DIR)/main.o
+
+myshell: $(OBJECTS)
+	gcc $(OBJECTS) -o myshell
+
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+	gcc -c $< -o $@
+
+run: myshell
+	./myshell
 
 clean:
-	rm  *.o myshell
+	rm $(SRC_DIR)/*.o myshell

@@ -3,7 +3,7 @@
 #include <dirent.h>
 #include <sys/wait.h>
 
-#include "header.h"
+#include "../headers/header.h"
 
 //execCmds is a very important funciton that is responsible for the execution of commands passed by the user.
 //Most of the execution of commands is abstracted into other files but most the execution of external commands

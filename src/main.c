@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <dirent.h>
 
-#include "header.h"
+#include "../headers/header.h"
 
 //The main file is split into two sections. The first section handles batch mode and the second handles standard user
 //mode. In both modes commands are parsed and executed accordingly. Execution depends upon weather commands are

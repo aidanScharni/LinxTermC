@@ -1,7 +1,7 @@
 #include <string.h>
 #include <dirent.h>
 
-#include "header.h"
+#include "../headers/header.h"
 
 //The checkRedirect file is used to see if redirection is to be implemented based upon user input. If redirection
 //of STDIN or STDOUT is seen the value of how many arguments before first redirect is returned
