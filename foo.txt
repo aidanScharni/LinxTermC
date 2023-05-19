@@ -1,2 +1,0 @@
-foo bar foo
-foo fo bar foo buzz
